@@ -33,3 +33,6 @@ class RegistoCasos(models.Model):
             
             exif_data = image._getexif() 
             print (exif_data)
+            
+            #alterado
+            
