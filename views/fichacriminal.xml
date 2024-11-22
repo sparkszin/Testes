@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_fichacriminal_form" model="ir.ui.view">
+            <field name="name">fichacriminal.form</field>
+            <field name="model">fichacriminal</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                    <div class="o_form_container" style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <div class="o_form_left">
+                        <group>
+                            <field name="name"/>
+                            <field name="birthday"/>
+                            <field name="age"/>
+                            <field name='gen'/>
+                            <field name='nasc'/>
+                            <field name='alt'/>
+                            <field name='morada'/>
+                            <field name='num1'/>
+                            <field name='num2'/>
+                            <field name='cc'/>
+                            <field name='nif'/>
+                            <field name='seg'/>
+                            <field name='ute'/>
+                            <field name='fil'/>
+                            <field name='desc'/>
+                            <field name='casos_ids'/>
+                        </group>
+                        
+                    </div>
+                    <div class="o_form_right" style="flex-shrink: 0; display: flex; flex-direction: column; align-items: center;">
+                        <field name="pic1" widget="image" class="oe_avatar" options="{'size': [100, 100]}" style="margin-bottom: 10px;"/>
+                        <div style="display: flex; gap: 10px;">
+                            <field name="pic2" widget="image" class="oe_avatar" options="{'size': [100, 100]}"/>
+                            <field name="pic3" widget="image" class="oe_avatar" options="{'size': [100, 100]}"/>
+                        </div>
+                    </div>
+                    <div style="position: absolute; bottom: 0; right: 0; margin: 10px;">
+                        <field name="numero_ficha" readonly="1"/>
+                    </div>
+                </div>
+            </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_fichacriminal_tree" model="ir.ui.view">
+            <field name="name">fichacriminal.tree</field>
+            <field name="model">fichacriminal</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name='birthday'/>
+                    <field name='casos_ids'/>
+                    <field name='numero_ficha'/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_fichacriminal" model="ir.actions.act_window">
+            <field name="name">Ficha Criminal</field>
+            <field name="res_model">fichacriminal</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Ainda não foi registada nenhuma ficha criminal!
+                </p>
+            </field>
+        </record>
+
+    </data>
+
+    <menuitem id="fichacriminal_root" name="Ficha Criminal" sequence="100" />
+    <menuitem id="fichacriminal_item" name="Ficha Criminal" parent="registodecasos_root" action="action_fichacriminal" sequence="100"/>
+</odoo>

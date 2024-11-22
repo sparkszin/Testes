@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_autor_form" model="ir.ui.view">
+         	<field name="name">autor.form</field>
+         	<field name="model">autor</field>
+         	<field name="arch" type="xml">
+             	<form>
+                 	<sheet>
+                     	<group>
+                         	<field name="name"/>
+							<field name='num'/>
+                            <field name='birthday'/>
+                            <field name='age'/>
+                            <field name='morada'/> 
+							<field name='cargos_id'/>
+							<field name='casos_ids'/>
+                     	</group>
+                 	</sheet>
+             	</form>
+         	</field>
+     	</record>
+
+        <record id="view_autor_tree" model="ir.ui.view">
+         	<field name="name">autor.tree</field>
+         	<field name="model">autor</field>
+         	<field name="arch" type="xml">
+             	<tree>
+					<field name='num'/>
+                 	<field name="name"/>
+					<field name='casos_ids'/> 
+             	</tree>
+         	</field>
+     	</record>
+
+		<record id="action_autor" model="ir.actions.act_window">
+			<field name="name">Autor</field>
+			<field name="res_model">autor</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Ainda não foi registado nenhum agente!
+				</p>
+			</field>
+		</record>
+
+    </data>
+
+    <menuitem id="autor_root" name="Agentes" sequence="100" />
+    <menuitem id="autor_item" name="Agentes" parent="registodecasos_root" action="action_autor" sequence="100"/>
+
+
+</odoo>

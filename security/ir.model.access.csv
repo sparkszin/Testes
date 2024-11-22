@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+registo_de_casos.access_registodecasos,access_registodecasos,registo_de_casos.model_registodecasos,base.group_user,1,1,1,1
+registo_de_casos.access_temas,access_temas,registo_de_casos.model_temas,base.group_user,1,1,1,1
+registo_de_casos.access_autor,access_autor,registo_de_casos.model_autor,base.group_user,1,1,1,1
+
+
+
+access_cargo_nivel3,access.cargo.nivel3,model_cargos,gestao.group_nivel3,1,0,0,0
+access_cargo_nivel2,access.cargo.nivel2,model_cargos,gestao.group_nivel2,1,1,0,0
+access_cargo_nivel1,access.cargo.nivel1,model_cargos,gestao.group_nivel1,1,1,1,1
+
