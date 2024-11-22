@@ -1,65 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="view_registodecasos_form" model="ir.ui.view">
-         	<field name="name">registodecasos.form</field>
-         	<field name="model">registodecasos</field>
-         	<field name="arch" type="xml">
-             	<form>
-				 <header>
-				     <button name="file_read" string="Ler Ficheiros" type="object" class="oe_highlight"/>
-				 </header>
-                 	<sheet>
-                     	<group>
-                         	<field name="ficha_id"/>
-							<field name='data'/>
-							<field name='autor_id'/> 
+        <record id="view_casos_form" model="ir.ui.view">
+            <field name="name">casos.form</field>
+            <field name="model">casos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
                             <field name='desc'/>
-							<field name='temas_ids'/>
-							<!--<field name="provas"/>-->
-                     	</group>
-						<group>
-							<div style="display: flex; gap: 20px;">
-								<!--<field name="provas" widget="image" options="{'size': [200, 200]}"/>-->
-							</div>
-                		</group>
-                 	</sheet>
-					<div class="oe_chatter">
-                        <!--<field name="message_follower_ids"/>
-                        <field name="activity_ids"/>
-                        <field name="message_ids"/>-->
-					</div>
-             	</form>
-         	</field>
-     	</record>
-        <record id="view_registodecasos_tree" model="ir.ui.view">
-         	<field name="name">registodecasos.tree</field>
-         	<field name="model">registodecasos</field>
-         	<field name="arch" type="xml">
-             	<tree>
-					<field name='data'/>
-                 	<field name="ficha_id"/>
-                    <field name='temas_ids'/>
-					<field name='autor_id'/>
-             	</tree>
-         	</field>
-     	</record>
+                            <field name='data'/>
+                            <field name="agente_id"/>
+                            <field name="casos_eq_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
-		<record id="action_registodecasos" model="ir.actions.act_window">
-			<field name="name">Registo de Casos</field>
-			<field name="res_model">registodecasos</field>
-			<field name="view_mode">tree,form</field>
-			<field name="help" type="html">
-				<p class="o_view_nocontent_smiling_face">
-					Ainda não foi registado nenhum caso!
-				</p>
-			</field>
-		</record>
+        <record id="view_casos_tree" model="ir.ui.view">
+            <field name="name">casos.tree</field>
+            <field name="model">casos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name='desc'/>
+                    <field name='data'/>
+                    <field name="agente_id"/>
+                    <field name="casos_eq_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_casos" model="ir.actions.act_window">
+            <field name="name">Registo de Casos</field>
+            <field name="res_model">casos</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Ainda não foi registado nenhum caso!
+                </p>
+            </field>
+        </record>
 
     </data>
 
-    <menuitem id="registodecasos_root" name="Registo de Casos" sequence="100" />
-    <menuitem id="registodecasos_item" name="Registo de Casos" parent="registodecasos_root" action="action_registodecasos" sequence="100"/>
-
+    <menuitem id="casos_root" name="User" sequence="100" />
+    <menuitem id="casos_item" name="Registo de Casos" parent="casos_root" action="action_casos" sequence="100"/>
 
 </odoo>

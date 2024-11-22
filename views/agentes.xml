@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_agentes_form" model="ir.ui.view">
+            <field name="name">agentes.form</field>
+            <field name="model">agentes</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name='num'/>
+                            <field name='birthday'/>
+                            <field name='age'/>
+                            <field name='morada'/>
+                            <field name="cargo_id"/>
+                            <field name="casos_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_agentes_tree" model="ir.ui.view">
+            <field name="name">agentes.tree</field>
+            <field name="model">agentes</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name='num'/>
+                    <field name="cargo_id"/>
+                    <field name="casos_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_agentes" model="ir.actions.act_window">
+            <field name="name">Agentes</field>
+            <field name="res_model">agentes</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Ainda não foi registado nenhum agentes!
+                </p>
+            </field>
+        </record>
+
+    </data>
+
+    <menuitem id="agentes_root" name="Agentes" sequence="100" />
+    <menuitem id="agentes_item" name="Agentes" parent="adm_root" action="action_agentes" sequence="100"/>
+
+</odoo>
