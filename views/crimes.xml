@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_crimes_form" model="ir.ui.view">
+            <field name="name">crimes.form</field>
+            <field name="model">crimes</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_crimes_tree" model="ir.ui.view">
+            <field name="name">crimes.tree</field>
+            <field name="model">crimes</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_crimes" model="ir.actions.act_window">
+            <field name="name">Crimes</field>
+            <field name="res_model">crimes</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Ainda não foi registado nenhum tema!
+                </p>    
+            </field>
+        </record>
+
+    </data>
+
+    <menuitem id="crimes_root" name="Crimes" sequence="100" />
+    <menuitem id="crimes_item" name="Crimes" parent="adm_root" action="action_crimes" sequence="100"/>
+
+</odoo>

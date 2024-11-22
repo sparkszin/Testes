@@ -17,23 +17,18 @@
                             <field name='nasc'/>
                             <field name='alt'/>
                             <field name='morada'/>
-                            <field name='num1'/>
-                            <field name='num2'/>
                             <field name='cc'/>
                             <field name='nif'/>
                             <field name='seg'/>
                             <field name='ute'/>
                             <field name='fil'/>
-                            <field name='desc'/>
-                            <field name='casos_ids'/>
                         </group>
-                        
                     </div>
                     <div class="o_form_right" style="flex-shrink: 0; display: flex; flex-direction: column; align-items: center;">
-                        <field name="pic1" widget="image" class="oe_avatar" options="{'size': [100, 100]}" style="margin-bottom: 10px;"/>
+                        <field name="pic1" widget="image" class="oe_avatar" options="{'size': [128, 128]}" style="margin-bottom: 10px;"/>
                         <div style="display: flex; gap: 10px;">
-                            <field name="pic2" widget="image" class="oe_avatar" options="{'size': [100, 100]}"/>
-                            <field name="pic3" widget="image" class="oe_avatar" options="{'size': [100, 100]}"/>
+                            <field name="pic2" widget="image" class="oe_avatar" options="{'size': [128, 128]}"/>
+                            <field name="pic3" widget="image" class="oe_avatar" options="{'size': [128, 128]}"/>
                         </div>
                     </div>
                     <div style="position: absolute; bottom: 0; right: 0; margin: 10px;">
@@ -50,8 +45,6 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name='birthday'/>
-                    <field name='casos_ids'/>
                     <field name='numero_ficha'/>
                 </tree>
             </field>
@@ -71,5 +64,5 @@
     </data>
 
     <menuitem id="fichacriminal_root" name="Ficha Criminal" sequence="100" />
-    <menuitem id="fichacriminal_item" name="Ficha Criminal" parent="registodecasos_root" action="action_fichacriminal" sequence="100"/>
+    <menuitem id="fichacriminal_item" name="Ficha Criminal" parent="casos_root" action="action_fichacriminal" sequence="100"/>
 </odoo>
