@@ -47,3 +47,4 @@ class FichaCriminal(models.Model):
         return super(FichaCriminal, self).create(vals)
 
     
+#AAAAAAAAAAAAAAAAAAAAAAAa
