@@ -51,3 +51,5 @@ class FichaCriminal(models.Model):
         novo_numero = ultimo_registro.numero_ficha + 1 if ultimo_registro else 1
         vals['numero_ficha'] = novo_numero
         return super(FichaCriminal, self).create(vals)
+    
+    ####alterações
